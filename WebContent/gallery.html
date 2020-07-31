@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GALLERY</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		body{
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+	<font size="10" face="impact" color="blue"><marquee behavior="alternate">COLLEGE MANAGEMENT SYSTEM GALLERY</marquee></font>
+	<table border="1" >
+	<div id="container">
+		<img class="slides"src="Images\college.jpg"/ >
+		<img class="slides"src="Images\onway.jpg"/ >
+		<img class="slides"src="Images\library.jpg"/ >
+		<img class="slides"src="Images\lab.jpg"/ >
+		<img class="slides"src="Images\student.jpg"/ >
+		<img class="slides"src="Images\park.jpg"/ >
+		<img class="slides"src="Images\final.jpg"/ >
+		<button class="button" onclick="plusindex(-1)" id="button1">&#10094;</button>
+		<button class="button" onclick="plusindex(1)" id="button2">&#10095;</button>
+	</div><br>
+	<center><a href="index.jsp"><h1 style="color:black">Back</h1></a></center>
+</body>
+	<script>
+		var index =1;
+
+		function plusindex(n) {
+			index = index + 1;
+			showImage(index);
+		}
+
+		showImage(1);
+
+		function showImage(n) {
+			var i;
+			var x = document.getElementsByClassName("slides");
+			if(n > x.length){index = 1};
+			if (n < 1) { index = x.length};
+			for ( i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			x[index-1].style.display = "block";
+		}
+	</script>
+</html>
